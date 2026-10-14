@@ -14,12 +14,9 @@ function EditGame() {
     const fetchGame = async () => {
       const token = localStorage.getItem("token");
       try {
-        const response = await axios.get(
-          `http://localhost:8080/api/v1/game/${id}`,
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          },
-        );
+        const response = await axios.get(`/api/v1/game/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
         setName(response.data.name);
         setCategories(response.data.categories);
         setLoading(false);
@@ -56,7 +53,7 @@ function EditGame() {
 
     try {
       await axios.put(
-        `http://localhost:8080/api/v1/game/${id}`,
+        `/api/v1/game/${id}`,
         { name, categories },
         { headers: { Authorization: `Bearer ${token}` } },
       );

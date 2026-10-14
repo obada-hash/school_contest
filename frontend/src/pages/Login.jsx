@@ -13,13 +13,10 @@ function Login() {
     setError("");
 
     try {
-      const response = await axios.post(
-        "http://localhost:8080/api/v1/auth/login",
-        {
-          email: email,
-          password: password,
-        },
-      );
+      const response = await axios.post("/api/v1/auth/login", {
+        email: email,
+        password: password,
+      });
 
       // Assuming your backend returns the token directly in response.data or inside a token field
       const token = response.data.token || response.data;

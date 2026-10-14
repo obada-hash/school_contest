@@ -61,7 +61,7 @@ function CreateGame() {
 
     try {
       await axios.post(
-        "http://localhost:8080/api/v1/game",
+        "/api/v1/game",
         { name, categories },
         { headers: { Authorization: `Bearer ${token}` } },
       );

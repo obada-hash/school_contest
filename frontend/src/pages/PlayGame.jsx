@@ -35,12 +35,9 @@ function PlayGame() {
       const token = localStorage.getItem("token");
       if (!token) return navigate("/login");
       try {
-        const response = await axios.get(
-          `http://localhost:8080/api/v1/game/${id}`,
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          },
-        );
+        const response = await axios.get(`/api/v1/game/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
 
         const fetchedGame = response.data;
         // Sort questions in each category increasingly by score

@@ -19,7 +19,7 @@ function Dashboard() {
 
       try {
         // Fetch games using the JWT token
-        const response = await axios.get("http://localhost:8080/api/v1/game", {
+        const response = await axios.get("/api/v1/game", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
